@@ -1,0 +1,7 @@
+<bean id="miServicio" class="com.example.MiServicio">
+    <constructor-arg ref="miDependencia" />
+</bean>
+
+<bean id="miControlador" class="com.example.MiControlador">
+    <property name="miServicio" ref="miServicio" />
+</bean>

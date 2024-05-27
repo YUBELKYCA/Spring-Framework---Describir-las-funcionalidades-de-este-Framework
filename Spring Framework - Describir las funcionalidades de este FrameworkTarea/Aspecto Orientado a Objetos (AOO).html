@@ -1,0 +1,7 @@
+<bean id="miSingleton" class="com.example.MiSingleton" scope="singleton" />
+
+<bean id="miFabrica" class="com.example.MiFabrica" factory-method="crearObjeto" />
+
+<bean id="miDao" class="com.example.MiDao">
+    <property name="dataSource" ref="dataSource" />
+</bean>

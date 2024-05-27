@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Framework Functionalities</title>
+</head>
+<body>
+
+    <h1>Spring Framework Functionalities</h1>
+
+    <h2>1. Inversion of Control (IoC)</h2>
+    <p>IoC promotes loose coupling by using dependency injection.</p>
+    <pre>
+        &lt;bean id="myService" class="com.example.MyService"&gt;
+            &lt;constructor-arg ref="myDependency"/&gt;
+        &lt;/bean&gt;
+
+        &lt;bean id="myController" class="com.example.MyController"&gt;
+            &lt;property name="myService" ref="myService"/&gt;
+        &lt;/bean&gt;
+    </pre>
+
+    <h2>2. Aspect-Oriented Programming (AOP)</h2>
+    <p>AOP enables modular cross-cutting concerns like logging and security.</p>
+    <pre>
+        &lt;aop:aspectj-autoproxy&gt;
+            &lt;aop:include pointcut="within(com.example.MyPackage..*)"/&gt;
+        &lt;/aop:aspectj-autoproxy&gt;
+
+        &lt;aop:advisor ref="myExceptionHandler"&gt;
+            &lt;aop:pointcut expression="execution(* *(..))"/&gt;
+        &lt;/aop:advisor&gt;
+    </pre>
+
+    <h2>3. Exception Handling</h2>
+    <p>Centralized exception handling simplifies error management.</p>
+    <pre>
+        &lt;bean id="myExceptionHandler" class="com.example.MyExceptionHandler"&gt;
+            &lt;property name="target" ref="myService"/&gt;
+        &lt;/bean&gt;
+    </pre>
+
+    </body>
+</html>
